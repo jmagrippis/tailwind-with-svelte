@@ -1,0 +1,90 @@
+@import './tailwind.css';
+
+* {
+	/* common */
+	--primary-color-hue: 15;
+	--primary-color-saturation: 100%;
+	--primary-color-lightness: 50%;
+
+	--primary-color-50: var(--primary-color-hue) 12%
+		var(--primary-color-lightness);
+	--primary-color-100: var(--primary-color-hue) 39%
+		var(--primary-color-lightness);
+	--primary-color-200: var(--primary-color-hue) 65%
+		var(--primary-color-lightness);
+	--primary-color-300: var(--primary-color-hue) 84%
+		var(--primary-color-lightness);
+	--primary-color-400: var(--primary-color-hue) var(--primary-color-saturation)
+		var(--primary-color-lightness);
+	--primary-color-500: var(--primary-color-hue) 98% 86%;
+	--primary-color-600: var(--primary-color-hue) 92% 69%;
+	--primary-color-700: var(--primary-color-hue) 84% 43%;
+	--primary-color-800: var(--primary-color-hue) 77% 15%;
+	--primary-color-900: var(--primary-color-hue) var(--primary-color-saturation)
+		8%;
+
+	/* light */
+	--text-base-light: var(--primary-color-900);
+	--text-muted-light: var(--primary-color-hue) 65% 25%;
+
+	--surface-100-light: var(--primary-color-hue) 15% 100%;
+	--surface-200-light: var(--primary-color-hue) 20% 98%;
+	--surface-300-light: var(--primary-color-hue) 20% 92%;
+	--surface-400-light: var(--primary-color-hue) 25% 90%;
+
+	/* dark */
+	--text-base-dark: var(--primary-color-hue) 15% 85%;
+	--text-muted-dark: var(--primary-color-hue) 12% 60%;
+
+	--surface-100-dark: var(--primary-color-900);
+	--surface-200-dark: var(--primary-color-hue) 98% 5%;
+	--surface-300-dark: var(--primary-color-hue) 96% 10%;
+	--surface-400-dark: var(--primary-color-hue) 94% 15%;
+}
+
+:root {
+	data-color-scheme: light;
+
+	/* defaults */
+	--text-base: var(--text-base-light);
+	--text-muted: var(--text-muted-light);
+	--surface-100: var(--surface-100-light);
+	--surface-200: var(--surface-200-light);
+	--surface-300: var(--surface-300-light);
+	--surface-400: var(--surface-400-light);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		data-color-scheme: dark;
+
+		--text-base: var(--text-base-dark);
+		--text-muted: var(--text-muted-dark);
+		--surface-100: var(--surface-100-dark);
+		--surface-200: var(--surface-200-dark);
+		--surface-300: var(--surface-300-dark);
+		--surface-400: var(--surface-400-dark);
+	}
+}
+
+[data-color-scheme='light'] {
+	data-color-scheme: light;
+
+	--text-base: var(--text-base-light);
+	--text-muted: var(--text-muted-light);
+	--surface-100: var(--surface-100-light);
+	--surface-200: var(--surface-200-light);
+	--surface-300: var(--surface-300-light);
+	--surface-400: var(--surface-400-light);
+}
+
+[data-color-scheme='dark'] {
+	data-color-scheme: dark;
+
+	--text-base: var(--text-base-dark);
+	--text-muted: var(--text-muted-dark);
+	--surface-100: var(--surface-100-dark);
+	--surface-200: var(--surface-200-dark);
+	--surface-300: var(--surface-300-dark);
+	--surface-400: var(--surface-400-dark);
+}
